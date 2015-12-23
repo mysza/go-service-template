@@ -35,7 +35,7 @@ build: clean fmt vet
 	godep go build -a -installsuffix cgo -o ./_dist/$(OUTPUT) $(MAINFILE)
 
 test:
-	godep go test ./... -ginkgo.failOnPending -ginkgo.randomizeAllSpecs -ginkgo.skipMeasurements=true
+	godep go test -race ./... -ginkgo.failOnPending -ginkgo.randomizeAllSpecs -ginkgo.skipMeasurements=true
 
 fmt:
 	go fmt ./...
